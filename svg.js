@@ -1,63 +1,80 @@
-var fro = document.getElementsByClassName('hair');
-var mouth = document.getElementsByClassName('smile');
-var eyes = document.getElementsByClassName('eye');
+var fro = document.getElementById('h');
+var mouth = document.getElementById('s');
+var leftEyes = document.getElementById('left');
+var rightEyes = document.getElementById('right');
 
-mouth.addEventListener('dblclick', (event) => {
-  changeMouth(event);
-});
-eyes.addEventListener('click', (event) => {
-  changeEyes(event);
-});
 fro.addEventListener('keypress', (event) => {
-  changeFro(event);
+  changeFro(event)
 });
+mouth.addEventListener('dblclick', (event) => {
+  changeMouth(event)
+});
+leftEyes.addEventListener('click', (event) => {
+  changeLeftEyes(event)
+});
+rightEyes.addEventListener('click', (event) => {
+  changeRightEyes(event)
+});
+
 
 function changeMouth(event) {
   var lips = event.target;
-  var color =lips.fill;
+  var color =lips.style.fill;
   if(color == "red") {
-    lips.fill= "white";
+    lips.style.fill= "white";
   }
   else {
-    lips.fill= "red";
+    lips.style.fill= "red";
   }
 
 }
 
-function changeEyes(event) {
-  var eyeBall = event.target;
-  var color =eyeBall.fill;
+function changeLeftEyes(event) {
+  var leftEyeBall = event.target;
+  var color =leftEyeBall.style.fill;
   if(color == "black") {
-    eyeBall.fill = "violet";
+    leftEyeBall.style.fill = "purple";
   }
   else {
-    eyeBall.fill= "black";
+    leftEyeBall.style.fill= "black";
+  }
+
+}
+
+function changeRightEyes(event) {
+  var rightEyeBall = event.target;
+  var color =rightEyeBall.style.fill;
+  if(color == "black") {
+    rightEyeBall.style.fill = "purple";
+  }
+  else {
+    rightEyeBall.style.fill= "black";
   }
 
 }
 
 function changeFro(event) {
-  var hairs = event.target;
-  var color =hairs.fill;
-  if (event.key === "g"){
-    hairs.fill = "green";
+  var hairs = fro
+  var color = hairs.style.fill;
+  if (event.key == "g"){
+    color = "green";
   }
-  else if (event.key === "r"){
-    hairs.fill = "red";
+  else if (event.key == "r"){
+    color = "red";
   }
-  else if (event.key === "o"){
-    hairs.fill = "orange";
+  else if (event.key == "o"){
+    color = "orange";
   }
-  else if (event.key === "y"){
-    hairs.fill = "yellow";
+  else if (event.key == "y"){
+   color = "yellow";
   }
-  else if (event.key === "b"){
-    hairs.fill = "blue";
+  else if (event.key == "b"){
+    color = "blue";
   }
-  else if (event.key === "p"){
-    hairs.fill = "purple";
+  else if (event.key == "p"){
+    color = "purple";
   }
   else {
-    hairs.fill = "red";
+    color = "red";
   }
 }
